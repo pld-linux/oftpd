@@ -45,7 +45,7 @@ command to list files).
 %description -l pl
 oftpd jest zaprojektowany ¿eby byæ tak bezpiecznym jak tylko anonimowy
 serwer FTP mo¿e najprawdopodobniej byæ. Dzia³a jako nie-root przez
-wiêkszo¶æ czasu i wykorzystuje Uniksowe polecenie chroot() ¿eby ukryæ
+wiêkszo¶æ czasu i wykorzystuje uniksowe polecenie chroot() ¿eby ukryæ
 wiêkszo¶æ systemowych katalogów przed zewnêtrznymi u¿ytkownikami - nie
 mog± siê do nich dostaæ nawet je¶li serwer zostanie z³amany. Zawiera
 te¿ swój w³asny kod do zmiany i listowania katalogów (wiêkszo¶æ
@@ -56,7 +56,6 @@ serwerów FTP wykorzystuje do tego polecenie systemowe "ls")
 %patch0 -p1
 
 %build
-rm -f missing
 %{__aclocal}
 %{__autoconf}
 %{__automake}
@@ -65,11 +64,12 @@ rm -f missing
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT{/etc/sysconfig,/etc/rc.d/init.d} \
 	$RPM_BUILD_ROOT/home/services/ftp/pub
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
 install %{SOURCE1} $RPM_BUILD_ROOT/etc/rc.d/init.d/%{name}
 install %{SOURCE2} $RPM_BUILD_ROOT/etc/sysconfig/%{name}
 
