@@ -1,12 +1,12 @@
 Summary:	Yet another anonymous FTP server
 Summary(pl):	Kolejny anonimowy serwer FTP
 Name:		oftpd
-Version:	0.3.6
-Release:	2
+Version:	0.3.7
+Release:	1
 License:	GPL
 Group:		Networking/Daemons
 Source0:	http://www.time-travellers.org/oftpd/%{name}-%{version}.tar.gz
-# Source0-md5:	78b4139bb0108297b9814564db986852
+# Source0-md5:	1a396ad12584c7efe3a0e712dadf28be
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 Patch0:		%{name}-sbindir.patch
