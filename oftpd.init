@@ -16,6 +16,7 @@
 # set defaults
 OFTPD_USER="ftp"
 OFTPD_ROOT="/home/services/ftp"
+OPTIONS=""
 
 # Get service config
 [ -f /etc/sysconfig/oftpd ] && . /etc/sysconfig/oftpd
@@ -38,7 +39,7 @@ case "$1" in
 	# Check if the service is already running?
 	if [ ! -f /var/lock/subsys/oftpd ]; then
 		msg_starting oftpd
-		daemon oftpd "$OFTPD_USER" "$OFTPD_ROOT"
+		daemon oftpd $OPTIONS "$OFTPD_USER" "$OFTPD_ROOT"
 		RETVAL=$?
 		[ $RETVAL -eq 0 ] && touch /var/lock/subsys/oftpd
 	else

@@ -8,3 +8,6 @@ OFTPD_USER="ftp"
 
 # FTP root directory
 OFTPD_ROOT="/home/services/ftp"
+
+# other options
+#OPTIONS=""
