@@ -1,0 +1,10 @@
+# Customized setings for oftpd
+
+# Nice level for oftpd
+SERVICE_RUN_NICE_LEVEL="+5"
+
+# User to run oftpd
+OFTPD_USER="ftp"
+
+# FTP root directory
+OFTPD_ROOT="/home/services/ftp"
