@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Networking/Daemons
 Source0:	http://www.time-travellers.org/oftpd/%{name}-%{version}.tar.gz
+# Source0-md5:	2958164251fd70b9d52de8c184822dec
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 Patch0:		%{name}-sbindir.patch
