@@ -10,40 +10,45 @@ Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 Patch0:		%{name}-sbindir.patch
 URL:		http://www.time-travellers.org/oftpd/
-Provides:       ftpserver
-Obsoletes:      ftpserver
-Obsoletes:      anonftp
-Obsoletes:      bftpd
-Obsoletes:      ftpd-BSD
-Obsoletes:      heimdal-ftpd
-Obsoletes:      linux-ftpd
+BuildRequires:	autoconf
+BuildRequires:	automake
+PreReq:		rc-scripts
+Requires(post,preun):	/sbin/chkconfig
+Provides:	ftpserver
+Obsoletes:	ftpserver
+Obsoletes:	anonftp
+Obsoletes:	bftpd
+Obsoletes:	ftpd-BSD
+Obsoletes:	heimdal-ftpd
+Obsoletes:	linux-ftpd
 Obsoletes:	muddleftpd
-Obsoletes:      proftpd
-Obsoletes:      proftpd-common
-Obsoletes:      proftpd-inetd
-Obsoletes:      proftpd-standalone
-Obsoletes:      pure-ftpd
-Obsoletes:      troll-ftpd
-Obsoletes:      vsftpd
-Obsoletes:      wu-ftpd
+Obsoletes:	proftpd
+Obsoletes:	proftpd-common
+Obsoletes:	proftpd-inetd
+Obsoletes:	proftpd-standalone
+Obsoletes:	pure-ftpd
+Obsoletes:	troll-ftpd
+Obsoletes:	vsftpd
+Obsoletes:	wu-ftpd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-oftpd is designed to be as secure as an anonymous FTP server can possibly be.
-It runs as non-root for most of the time, and uses the Unix chroot() command to
-hide most of the systems directories from external users -- they cannot change
-into them even if the server is totally compromised. It also contains its own
-directory-change and directory-listing code (most FTP servers execute the
-system "ls" command to list files).
+oftpd is designed to be as secure as an anonymous FTP server can
+possibly be. It runs as non-root for most of the time, and uses the
+Unix chroot() command to hide most of the systems directories from
+external users -- they cannot change into them even if the server is
+totally compromised. It also contains its own directory-change and
+directory-listing code (most FTP servers execute the system "ls"
+command to list files).
 
 %description -l pl
-oftpd jest zaprojektowany ¿eby byæ tak bezpiecznym jak tylko anonimowy serwer
-FTP mo¿e najprawdopodobniej byæ. Dzia³a jako nie-root przez wiêkszo¶æ czasu i
-wykorzystuje Unixowe polecenie chroot() ¿eby ukryæ wiêkszo¶æ systemowych
-katalogów przed zewnêtrznymi u¿ytkownikami -- nie mog± siê do nich dostaæ nawet
-je¶li serwer zostanie z³amany. Zawiera te¿ swój w³asny kod do zmiany i
-listowania katalogów (wiêkszo¶æ serwerów FTP wykorzystuje do tego polecenie
-systemowe "ls")
+oftpd jest zaprojektowany ¿eby byæ tak bezpiecznym jak tylko anonimowy
+serwer FTP mo¿e najprawdopodobniej byæ. Dzia³a jako nie-root przez
+wiêkszo¶æ czasu i wykorzystuje Unixowe polecenie chroot() ¿eby ukryæ
+wiêkszo¶æ systemowych katalogów przed zewnêtrznymi u¿ytkownikami - nie
+mog± siê do nich dostaæ nawet je¶li serwer zostanie z³amany. Zawiera
+te¿ swój w³asny kod do zmiany i listowania katalogów (wiêkszo¶æ
+serwerów FTP wykorzystuje do tego polecenie systemowe "ls")
 
 %prep
 %setup -q
