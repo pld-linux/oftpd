@@ -1,0 +1,72 @@
+#!/bin/sh
+#
+# oftpd	oftpd server
+#
+# chkconfig:	345 85 15
+# description:	oftpd is secure anonymous-only ftp server.
+# processname:	oftpd
+
+
+# Source function library
+. /etc/rc.d/init.d/functions
+
+# Get network config
+. /etc/sysconfig/network
+
+# set defaults
+OFTPD_USER="ftp"
+OFTPD_ROOT="/home/services/ftp"
+
+# Get service config
+[ -f /etc/sysconfig/oftpd ] && . /etc/sysconfig/oftpd
+
+# Check that networking is up.
+if is_yes "${NETWORKING}"; then
+	if [ ! -f /var/lock/subsys/network ]; then
+		# nls "ERROR: Networking is down. %s can't be run." <service>
+		msg_network_down oftpd
+		exit 1
+	fi
+else
+	exit 0
+fi
+
+RETVAL=0
+# See how we were called.
+case "$1" in
+  start)
+	# Check if the service is already running?
+	if [ ! -f /var/lock/subsys/oftpd ]; then
+		msg_starting oftpd
+		daemon oftpd "$OFTPD_USER" "$OFTPD_ROOT"
+		RETVAL=$?
+		[ $RETVAL -eq 0 ] && touch /var/lock/subsys/oftpd
+	else
+		msg_already_running oftpd
+	fi
+	;;
+  stop)
+	# Stop daemons.
+	if [ -f /var/lock/subsys/oftpd ]; then
+		msg_stopping oftpd
+		killproc oftpd
+		rm -f /var/lock/subsys/oftpd > /dev/null 2>&1
+	else
+		msg_not_running oftpd
+	fi
+	;;
+  status)
+	status oftpd
+	exit $?
+	;;
+  restart|force-reload)
+	$0 stop
+	$0 start
+	exit $?
+	;;
+  *)
+	msg_usage "$0 {start|stop|restart|force-reload|status}"
+	exit 3
+esac
+
+exit $RETVAL
