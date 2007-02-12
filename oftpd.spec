@@ -1,5 +1,5 @@
 Summary:	Yet another anonymous FTP server
-Summary(pl):	Kolejny anonimowy serwer FTP
+Summary(pl.UTF-8):   Kolejny anonimowy serwer FTP
 Name:		oftpd
 Version:	0.3.7
 Release:	1
@@ -42,14 +42,14 @@ totally compromised. It also contains its own directory-change and
 directory-listing code (most FTP servers execute the system "ls"
 command to list files).
 
-%description -l pl
-oftpd jest zaprojektowany ¿eby byæ tak bezpiecznym jak tylko anonimowy
-serwer FTP mo¿e najprawdopodobniej byæ. Dzia³a jako nie-root przez
-wiêkszo¶æ czasu i wykorzystuje uniksowe polecenie chroot() ¿eby ukryæ
-wiêkszo¶æ systemowych katalogów przed zewnêtrznymi u¿ytkownikami - nie
-mog± siê do nich dostaæ nawet je¶li serwer zostanie z³amany. Zawiera
-te¿ swój w³asny kod do zmiany i listowania katalogów (wiêkszo¶æ
-serwerów FTP wykorzystuje do tego polecenie systemowe "ls")
+%description -l pl.UTF-8
+oftpd jest zaprojektowany Å¼eby byÄ‡ tak bezpiecznym jak tylko anonimowy
+serwer FTP moÅ¼e najprawdopodobniej byÄ‡. DziaÅ‚a jako nie-root przez
+wiÄ™kszoÅ›Ä‡ czasu i wykorzystuje uniksowe polecenie chroot() Å¼eby ukryÄ‡
+wiÄ™kszoÅ›Ä‡ systemowych katalogÃ³w przed zewnÄ™trznymi uÅ¼ytkownikami - nie
+mogÄ… siÄ™ do nich dostaÄ‡ nawet jeÅ›li serwer zostanie zÅ‚amany. Zawiera
+teÅ¼ swÃ³j wÅ‚asny kod do zmiany i listowania katalogÃ³w (wiÄ™kszoÅ›Ä‡
+serwerÃ³w FTP wykorzystuje do tego polecenie systemowe "ls")
 
 %prep
 %setup -q
