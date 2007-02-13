@@ -1,5 +1,5 @@
 Summary:	Yet another anonymous FTP server
-Summary(pl.UTF-8):   Kolejny anonimowy serwer FTP
+Summary(pl.UTF-8):	Kolejny anonimowy serwer FTP
 Name:		oftpd
 Version:	0.3.7
 Release:	1
