@@ -21,6 +21,7 @@ Obsoletes:	anonftp
 Obsoletes:	bftpd
 Obsoletes:	ftpd-BSD
 Obsoletes:	heimdal-ftpd
+Obsoletes:	krb5-ftpd
 Obsoletes:	linux-ftpd
 Obsoletes:	muddleftpd
 Obsoletes:	proftpd
