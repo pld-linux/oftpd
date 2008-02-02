@@ -2,7 +2,7 @@ Summary:	Yet another anonymous FTP server
 Summary(pl.UTF-8):	Kolejny anonimowy serwer FTP
 Name:		oftpd
 Version:	0.3.7
-Release:	1
+Release:	2
 License:	GPL
 Group:		Networking/Daemons
 Source0:	http://www.time-travellers.org/oftpd/%{name}-%{version}.tar.gz
@@ -16,22 +16,6 @@ BuildRequires:	automake
 PreReq:		rc-scripts
 Requires(post,preun):	/sbin/chkconfig
 Provides:	ftpserver
-Obsoletes:	ftpserver
-Obsoletes:	anonftp
-Obsoletes:	bftpd
-Obsoletes:	ftpd-BSD
-Obsoletes:	heimdal-ftpd
-Obsoletes:	krb5-ftpd
-Obsoletes:	linux-ftpd
-Obsoletes:	muddleftpd
-Obsoletes:	proftpd
-Obsoletes:	proftpd-common
-Obsoletes:	proftpd-inetd
-Obsoletes:	proftpd-standalone
-Obsoletes:	pure-ftpd
-Obsoletes:	troll-ftpd
-Obsoletes:	vsftpd
-Obsoletes:	wu-ftpd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
