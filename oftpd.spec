@@ -38,7 +38,7 @@ serwerów FTP wykorzystuje do tego polecenie systemowe "ls")
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__aclocal}
